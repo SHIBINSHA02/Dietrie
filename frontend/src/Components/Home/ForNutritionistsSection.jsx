@@ -1,3 +1,4 @@
+// frontend/src/Components/Home/ForNutritionistsSection.jsx
 import React from 'react';
 import FeatureCard from './FeatureCard';
 

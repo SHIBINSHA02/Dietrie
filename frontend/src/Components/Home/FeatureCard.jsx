@@ -1,3 +1,4 @@
+// frontend/src/Components/Home/FeatureCard.jsx
 import React from 'react';
 
 function FeatureCard({ iconSvg, title, description }) {
