@@ -1,6 +1,8 @@
+// frontend/src/Components/Home/Navbar.jsx
+// frontend/src/Components/Home/Header.jsx
 import React, { useState } from 'react';
 
-function Header() {
+function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -53,4 +55,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Navbar;
