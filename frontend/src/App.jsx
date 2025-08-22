@@ -1,8 +1,9 @@
-// frontend/src/App.jsx
+
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css'; // Global styles
 import './index.css'; // Tailwind CSS
+import Navbar from './Components/Navbar/Navbar.jsx'; // Add Navbar
 import Home from './Components/Home/Home.jsx'; // Dashboard component
 import Login from './Components/Auth/Login.jsx';
 import Signup from './Components/Auth/Signup.jsx';
@@ -28,9 +29,10 @@ function App() {
         className="relative flex size-full min-h-screen flex-col bg-[#f8fcf8] group/design-root overflow-x-hidden"
         style={{ fontFamily: 'Lexend, "Noto Sans", sans-serif' }}
       >
+        <Navbar isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
         <Routes>
           <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/signup" element={<Signup setIsAuthenticated={setIsAuthenticated} />} />
           <Route
             path="/dashboard"
             element={
