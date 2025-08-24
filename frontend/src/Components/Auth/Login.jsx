@@ -32,7 +32,7 @@ const Login = ({ setIsAuthenticated }) => {
       if (response.ok) {
         localStorage.setItem('token', data.token);
         setIsAuthenticated(true);
-        navigate('/dashboard');
+        navigate('/home');
       } else {
         setError(data.message || 'Login failed');
       }
