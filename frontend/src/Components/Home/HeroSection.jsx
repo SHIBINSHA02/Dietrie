@@ -1,3 +1,4 @@
+// frontend/src/Components/Home/HeroSection.jsx
 import React from 'react';
 
 function HeroSection() {

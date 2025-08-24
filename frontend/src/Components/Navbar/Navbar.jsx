@@ -1,6 +1,6 @@
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { User } from 'lucide-react'; // profile icon
 
 function Navbar({ isAuthenticated, setIsAuthenticated }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,19 +9,19 @@ function Navbar({ isAuthenticated, setIsAuthenticated }) {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const handleLinkClick = () => {
-    if (isMenuOpen) setIsMenuOpen(false); // Close menu after click
+    if (isMenuOpen) setIsMenuOpen(false);
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('token'); // Clear JWT token
-    setIsAuthenticated(false); // Update auth state
-    navigate('/login'); // Redirect to login
-    handleLinkClick(); // Close menu if open
+    localStorage.removeItem('token');
+    setIsAuthenticated(false);
+    navigate('/login');
+    handleLinkClick();
   };
 
   return (
     <header className="flex items-center stretch fixed w-full z-20 justify-between whitespace-nowrap border-b border-solid border-b-[#e7f3e7] px-4 sm:px-6 lg:px-10 py-3 bg-white">
-      {/* Logo */}
+  
       <div className="flex items-center gap-3 sm:gap-4 text-[#0e1b0e]">
         <div className="size-5">
           <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,10 +31,9 @@ function Navbar({ isAuthenticated, setIsAuthenticated }) {
             ></path>
           </svg>
         </div>
-        <h2 className="text-[#0e1b0e] text-lg lg:text-xl font-bold tracking-tight">NutriTrack</h2>
+        <h2 className="text-[#0e1b0e] text-lg lg:text-xl font-bold tracking-tight">DietGen</h2>
       </div>
 
-      {/* Hamburger (mobile only) */}
       <button
         className="sm:hidden text-[#0e1b0e] focus:outline-none"
         onClick={toggleMenu}
@@ -51,7 +50,7 @@ function Navbar({ isAuthenticated, setIsAuthenticated }) {
         </svg>
       </button>
 
-      {/* Nav Links */}
+      {/* Menu Items */}
       <div
         className={`${
           isMenuOpen ? 'flex' : 'hidden'
@@ -71,14 +70,27 @@ function Navbar({ isAuthenticated, setIsAuthenticated }) {
             Resources
           </a>
         </div>
-        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 items-center">
           <Link to="/signup" className="btn-primary">
             Get Started
           </Link>
           {isAuthenticated ? (
-            <button onClick={handleLogout} className="btn-secondary">
-              Log Out
-            </button>
+            <>
+              {/* Profile Icon */}
+              <Link
+                to="/profile"
+                onClick={handleLinkClick}
+                className="flex items-center gap-2 text-[#0e1b0e] hover:text-green-600 transition"
+              >
+                <User className="w-5 h-5" />
+                <span className="hidden sm:inline">Profile</span>
+              </Link>
+
+              <button onClick={handleLogout} className="btn-secondary">
+                Log Out
+              </button>
+            </>
           ) : (
             <Link to="/login" className="btn-secondary">
               Log In
