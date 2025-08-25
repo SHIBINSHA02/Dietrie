@@ -36,7 +36,7 @@ const Signup = ({ setIsAuthenticated }) => {
       });
       const data = await response.json();
       if (response.ok) {
-        navigate('/login');
+        navigate('/home');
       } else {
         setError(data.message || 'Signup failed');
       }
