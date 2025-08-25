@@ -1,3 +1,4 @@
+// frontend/src/Components/Navbar/Navbar.jsx
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { User } from 'lucide-react'; // profile icon
@@ -57,7 +58,7 @@ function Navbar({ isAuthenticated, setIsAuthenticated }) {
         } sm:flex flex-col sm:flex-row sm:flex-1 sm:items-center sm:justify-end gap-4 sm:gap-6 lg:gap-8 absolute sm:static top-full left-0 right-0 bg-white sm:bg-transparent p-4 sm:p-0 border-b sm:border-none border-[#e7f3e7] z-20`}
       >
         <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 lg:gap-8">
-          <Link to="/dashboard" onClick={handleLinkClick} className="nav-link">
+          <Link to="/home" onClick={handleLinkClick} className="nav-link">
             Home
           </Link>
           <a onClick={handleLinkClick} className="nav-link" href="#for-users-section">
