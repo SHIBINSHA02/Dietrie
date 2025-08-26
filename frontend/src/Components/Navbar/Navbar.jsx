@@ -1,7 +1,6 @@
-// frontend/src/Components/Navbar/Navbar.jsx
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { User } from 'lucide-react'; // profile icon
+import { User, Bell } from 'lucide-react';
 
 function Navbar({ isAuthenticated, setIsAuthenticated }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,22 +20,23 @@ function Navbar({ isAuthenticated, setIsAuthenticated }) {
   };
 
   return (
-    <header className="flex items-center stretch fixed w-full z-20 justify-between whitespace-nowrap border-b border-solid border-b-[#e7f3e7] px-4 sm:px-6 lg:px-10 py-3 bg-white">
-  
-      <div className="flex items-center gap-3 sm:gap-4 text-[#0e1b0e]">
-        <div className="size-5">
+    <header className="fixed top-0 left-0 w-full z-20 bg-white border-b border-gray-200 px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+      {/* Logo Section */}
+      <div className="flex items-center gap-3">
+        <div className="w-6 h-6">
           <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M13.8261 30.5736C16.7203 29.8826 20.2244 29.4783 24 29.4783C27.7756 29.4783 31.2797 29.8826 34.1739 30.5736C36.9144 31.2278 39.9967 32.7669 41.3563 33.8352L24.8486 7.36089C24.4571 6.73303 23.5429 6.73303 23.1514 7.36089L6.64374 33.8352C8.00331 32.7669 11.0856 31.2278 13.8261 30.5736Z"
               fill="currentColor"
-            ></path>
+            />
           </svg>
         </div>
-        <h2 className="text-[#0e1b0e] text-lg lg:text-xl font-bold tracking-tight">DietGen</h2>
+        <h2 className="text-lg font-bold text-gray-800 tracking-tight">DietGen</h2>
       </div>
 
+      {/* Mobile Menu Button */}
       <button
-        className="sm:hidden text-[#0e1b0e] focus:outline-none"
+        className="sm:hidden text-gray-800 focus:outline-none"
         onClick={toggleMenu}
         aria-label="Toggle menu"
         aria-expanded={isMenuOpen}
@@ -55,49 +55,59 @@ function Navbar({ isAuthenticated, setIsAuthenticated }) {
       <div
         className={`${
           isMenuOpen ? 'flex' : 'hidden'
-        } sm:flex flex-col sm:flex-row sm:flex-1 sm:items-center sm:justify-end gap-4 sm:gap-6 lg:gap-8 absolute sm:static top-full left-0 right-0 bg-white sm:bg-transparent p-4 sm:p-0 border-b sm:border-none border-[#e7f3e7] z-20`}
+        } sm:flex flex-col sm:flex-row sm:items-center sm:gap-6 absolute sm:static top-full left-0 right-0 bg-white sm:bg-transparent p-4 sm:p-0 border-b sm:border-none border-gray-200 z-10`}
       >
-        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 lg:gap-8">
-          <Link to="/home" onClick={handleLinkClick} className="nav-link">
-            Home
-          </Link>
-          <a onClick={handleLinkClick} className="nav-link" href="#for-users-section">
-            For Users
-          </a>
-          <a onClick={handleLinkClick} className="nav-link" href="#for-nutritionists-section">
-            For Nutritionists
-          </a>
-          <a onClick={handleLinkClick} className="nav-link" href="#resources">
-            Resources
-          </a>
-        </div>
+        {isAuthenticated ? (
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+            {/* Notification Icon */}
+            <Link
+              to="/notifications"
+              onClick={handleLinkClick}
+              className="relative flex items-center gap-2 text-gray-800 hover:text-green-600 transition-colors"
+            >
+              <Bell className="w-5 h-5" />
+              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+                3
+              </span>
+              <span className="hidden sm:inline font-medium">Notifications</span>
+            </Link>
 
-        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 items-center">
-          <Link to="/signup" className="btn-primary">
-            Get Started
-          </Link>
-          {isAuthenticated ? (
-            <>
-              {/* Profile Icon */}
-              <Link
-                to="/profile"
-                onClick={handleLinkClick}
-                className="flex items-center gap-2 text-[#0e1b0e] hover:text-green-600 transition"
-              >
-                <User className="w-5 h-5" />
-                <span className="hidden sm:inline">Profile</span>
-              </Link>
+            {/* Profile Icon */}
+            <Link
+              to="/profile"
+              onClick={handleLinkClick}
+              className="flex items-center gap-2 text-gray-800 hover:text-green-600 transition-colors"
+            >
+              <User className="w-5 h-5" />
+              <span className="hidden sm:inline font-medium">Profile</span>
+            </Link>
 
-              <button onClick={handleLogout} className="btn-secondary">
-                Log Out
-              </button>
-            </>
-          ) : (
-            <Link to="/login" className="btn-secondary">
+            {/* Logout Button */}
+            <button
+              onClick={handleLogout}
+              className="flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-lg hover:bg-green-700 transition-colors"
+            >
+              Log Out
+            </button>
+          </div>
+        ) : (
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+            <Link
+              to="/signup"
+              onClick={handleLinkClick}
+              className="flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-lg hover:bg-green-700 transition-colors"
+            >
+              Get Started
+            </Link>
+            <Link
+              to="/login"
+              onClick={handleLinkClick}
+              className="flex items-center justify-center px-4 py-2 text-sm font-medium text-gray-800 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
+            >
               Log In
             </Link>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </header>
   );
