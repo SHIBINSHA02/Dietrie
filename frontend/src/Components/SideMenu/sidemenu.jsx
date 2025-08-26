@@ -23,77 +23,20 @@ const SideMenu = () => {
   const [activeItem, setActiveItem] = useState('home');
 
   const menuItems = [
-    {
-      id: 'home',
-      label: 'Home',
-      icon: Home,
-      href: '#home'
-    },
-    {
-      id: 'dashboard',
-      label: 'Dashboard',
-      icon: TrendingUp,
-      href: '#dashboard'
-    },
-    {
-      id: 'meal-plans',
-      label: 'Meal Plans',
-      icon: Utensils,
-      href: '#meal-plans',
-      badge: '3'
-    },
-    {
-      id: 'nutrition',
-      label: 'Nutrition Tracking',
-      icon: Apple,
-      href: '#nutrition'
-    },
-    {
-      id: 'goals',
-      label: 'Health Goals',
-      icon: Target,
-      href: '#goals'
-    },
-    {
-      id: 'appointments',
-      label: 'Appointments',
-      icon: Calendar,
-      href: '#appointments',
-      badge: '2'
-    },
-    {
-      id: 'nutritionists',
-      label: 'Find Nutritionists',
-      icon: Users,
-      href: '#nutritionists'
-    },
-    {
-      id: 'profile',
-      label: 'Profile',
-      icon: User,
-      href: '#profile'
-    },
-    {
-      id: 'resources',
-      label: 'Resources',
-      icon: BookOpen,
-      href: '#resources'
-    }
+    { id: 'home', label: 'Home', icon: Home, href: '#home' },
+    { id: 'dashboard', label: 'Dashboard', icon: TrendingUp, href: '#dashboard' },
+    { id: 'meal-plans', label: 'Meal Plans', icon: Utensils, href: '#meal-plans', badge: '3' },
+    { id: 'nutrition', label: 'Nutrition Tracking', icon: Apple, href: '#nutrition' },
+    { id: 'goals', label: 'Health Goals', icon: Target, href: '#goals' },
+    { id: 'appointments', label: 'Appointments', icon: Calendar, href: '#appointments', badge: '2' },
+    { id: 'nutritionists', label: 'Find Nutritionists', icon: Users, href: '#nutritionists' },
+    { id: 'profile', label: 'Profile', icon: User, href: '#profile' },
+    { id: 'resources', label: 'Resources', icon: BookOpen, href: '#resources' }
   ];
 
   const bottomMenuItems = [
-    {
-      id: 'settings',
-      label: 'Settings',
-      icon: Settings,
-      href: '#settings'
-    },
-    {
-      id: 'help',
-      label: 'Help & Support',
-      icon: HelpCircle,
-      href: '#help'
-    }
+    { id: 'settings', label: 'Settings', icon: Settings, href: '#settings' },
+    { id: 'help', label: 'Help & Support', icon: HelpCircle, href: '#help' }
   ];
 
   const toggleMenu = () => {
@@ -131,10 +74,10 @@ const SideMenu = () => {
         fixed lg:static top-0 left-0 h-screen bg-white shadow-xl z-40
         transform transition-transform duration-300 ease-in-out
         ${isOpen ? 'translate-x-0' : '-translate-x-full'}
-        lg:translate-x-0 w-64 flex flex-col
+        lg:translate-x-0 w-64 flex flex-col overflow-y-auto
       `}>
         {/* Header */}
-        <div className="p-6 border-b border-gray-200">
+        <div className="p-6 border-b border-gray-200 sticky top-0 bg-white z-10">
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center">
               <Apple className="text-white" size={24} />
@@ -147,7 +90,7 @@ const SideMenu = () => {
         </div>
 
         {/* User Profile Section */}
-        <div className="p-4 border-b border-gray-100">
+        <div className="p-4 border-b border-gray-100 sticky top-[72px] bg-white z-10">
           <div className="flex items-center space-x-3">
             <div className="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">
               <User className="text-gray-600" size={20} />
@@ -161,7 +104,7 @@ const SideMenu = () => {
         </div>
 
         {/* Main Navigation */}
-        <nav className="flex-1 overflow-y-auto py-4">
+        <nav className="flex-1 py-4">
           <ul className="space-y-1 px-3">
             {menuItems.map((item) => {
               const IconComponent = item.icon;
