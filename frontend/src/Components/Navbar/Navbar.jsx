@@ -7,7 +7,6 @@ function Navbar({ isAuthenticated, setIsAuthenticated }) {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Debugging: Log authentication state and current route
   console.log('Navbar: isAuthenticated=', isAuthenticated, 'location.pathname=', location.pathname);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -51,7 +50,9 @@ function Navbar({ isAuthenticated, setIsAuthenticated }) {
         } sm:flex flex-col sm:flex-row sm:items-center sm:gap-6 absolute sm:static top-full left-0 right-0 bg-white sm:bg-transparent p-4 sm:p-0 border-b sm:border-none border-gray-200 z-10`}
       >
         {isAuthPage || !isAuthenticated ? (
-          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+          <div className="flex flex-col smევ
+
+sm:flex-row items-center gap-4 sm:gap-6">
             <Link
               to="/signup"
               onClick={handleLinkClick}
@@ -69,7 +70,6 @@ function Navbar({ isAuthenticated, setIsAuthenticated }) {
           </div>
         ) : (
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-            {/* Notification Icon */}
             <Link
               to="/notifications"
               onClick={handleLinkClick}
@@ -81,8 +81,6 @@ function Navbar({ isAuthenticated, setIsAuthenticated }) {
               </span>
               <span className="hidden sm:inline font-medium">Notifications</span>
             </Link>
-
-            {/* Profile Icon */}
             <Link
               to="/profile"
               onClick={handleLinkClick}
@@ -91,8 +89,6 @@ function Navbar({ isAuthenticated, setIsAuthenticated }) {
               <User className="w-5 h-5" />
               <span className="hidden sm:inline font-medium">Profile</span>
             </Link>
-
-            {/* Logout Button */}
             <button
               onClick={handleLogout}
               className="flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-lg hover:bg-green-700 transition-colors"

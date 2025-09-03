@@ -1,6 +1,5 @@
-// frontend/src/Components/SideMenu/sidemenu.jsx
-
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { 
   Menu, 
   X, 
@@ -20,34 +19,26 @@ import {
 
 const SideMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeItem, setActiveItem] = useState('home');
 
   const menuItems = [
-    { id: 'home', label: 'Home', icon: Home, href: '#home' },
-    { id: 'dashboard', label: 'Dashboard', icon: TrendingUp, href: '#dashboard' },
-    { id: 'meal-plans', label: 'Meal Plans', icon: Utensils, href: '#meal-plans', badge: '3' },
-    { id: 'nutrition', label: 'Nutrition Tracking', icon: Apple, href: '#nutrition' },
-    { id: 'goals', label: 'Health Goals', icon: Target, href: '#goals' },
-    { id: 'appointments', label: 'Appointments', icon: Calendar, href: '#appointments', badge: '2' },
-    { id: 'nutritionists', label: 'Find Nutritionists', icon: Users, href: '#nutritionists' },
-    { id: 'profile', label: 'Profile', icon: User, href: '#profile' },
-    { id: 'resources', label: 'Resources', icon: BookOpen, href: '#resources' }
+    { id: 'home', label: 'Home', icon: Home, to: '/home' },
+    { id: 'dashboard', label: 'Dashboard', icon: TrendingUp, to: '/dashboard' },
+    { id: 'meal-plans', label: 'Meal Plans', icon: Utensils, to: '/meals', badge: '3' },
+    { id: 'nutrition', label: 'Nutrition Tracking', icon: Apple, to: '/track' },
+    { id: 'goals', label: 'Health Goals', icon: Target, to: '/goals' },
+    { id: 'appointments', label: 'Appointments', icon: Calendar, to: '/appointments', badge: '2' },
+    { id: 'nutritionists', label: 'Find Nutritionists', icon: Users, to: '/nutritionists' },
+    { id: 'profile', label: 'Profile', icon: User, to: '/profile' },
+    { id: 'resources', label: 'Resources', icon: BookOpen, to: '/resources' }
   ];
 
   const bottomMenuItems = [
-    { id: 'settings', label: 'Settings', icon: Settings, href: '#settings' },
-    { id: 'help', label: 'Help & Support', icon: HelpCircle, href: '#help' }
+    { id: 'settings', label: 'Settings', icon: Settings, to: '/settings' },
+    { id: 'help', label: 'Help & Support', icon: HelpCircle, to: '/help' }
   ];
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-  };
-
-  const handleItemClick = (itemId) => {
-    setActiveItem(itemId);
-    if (window.innerWidth < 1024) {
-      setIsOpen(false);
-    }
   };
 
   return (
@@ -108,32 +99,30 @@ const SideMenu = () => {
           <ul className="space-y-1 px-3">
             {menuItems.map((item) => {
               const IconComponent = item.icon;
-              const isActive = activeItem === item.id;
-              
               return (
                 <li key={item.id}>
-                  <a
-                    href={item.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleItemClick(item.id);
-                    }}
-                    className={`
-                      flex items-center space-x-3 px-3 py-3 rounded-lg transition-all duration-200
-                      ${isActive 
-                        ? 'bg-green-50 text-green-700 border-r-4 border-green-600' 
-                        : 'text-gray-700 hover:bg-gray-50 hover:text-green-600'
-                      }
-                    `}
+                  <NavLink
+                    to={item.to}
+                    className={({ isActive }) =>
+                      `flex items-center space-x-3 px-3 py-3 rounded-lg transition-all duration-200 ${
+                        isActive
+                          ? 'bg-green-50 text-green-700 border-r-4 border-green-600'
+                          : 'text-gray-700 hover:bg-gray-50 hover:text-green-600'
+                      }`
+                    }
+                    onClick={() => window.innerWidth < 1024 && setIsOpen(false)}
                   >
-                    <IconComponent size={20} className={isActive ? 'text-green-600' : ''} />
+                    <IconComponent
+                      size={20}
+                      className="text-current" // Use text-current to inherit color from parent
+                    />
                     <span className="font-medium flex-1">{item.label}</span>
                     {item.badge && (
                       <span className="bg-red-500 text-white text-xs rounded-full px-2 py-1 min-w-[20px] text-center">
                         {item.badge}
                       </span>
                     )}
-                  </a>
+                  </NavLink>
                 </li>
               );
             })}
@@ -145,27 +134,25 @@ const SideMenu = () => {
           <ul className="space-y-1">
             {bottomMenuItems.map((item) => {
               const IconComponent = item.icon;
-              const isActive = activeItem === item.id;
-              
               return (
                 <li key={item.id}>
-                  <a
-                    href={item.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleItemClick(item.id);
-                    }}
-                    className={`
-                      flex items-center space-x-3 px-3 py-3 rounded-lg transition-all duration-200
-                      ${isActive 
-                        ? 'bg-green-50 text-green-700' 
-                        : 'text-gray-700 hover:bg-gray-50 hover:text-green-600'
-                      }
-                    `}
+                  <NavLink
+                    to={item.to}
+                    className={({ isActive }) =>
+                      `flex items-center space-x-3 px-3 py-3 rounded-lg transition-all duration-200 ${
+                        isActive
+                          ? 'bg-green-50 text-green-700'
+                          : 'text-gray-700 hover:bg-gray-50 hover:text-green-600'
+                      }`
+                    }
+                    onClick={() => window.innerWidth < 1024 && setIsOpen(false)}
                   >
-                    <IconComponent size={20} className={isActive ? 'text-green-600' : ''} />
+                    <IconComponent
+                      size={20}
+                      className="text-current"
+                    />
                     <span className="font-medium">{item.label}</span>
-                  </a>
+                  </NavLink>
                 </li>
               );
             })}
