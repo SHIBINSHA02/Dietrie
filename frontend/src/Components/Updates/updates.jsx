@@ -22,7 +22,7 @@ function Updates() {
   ]
 
   return (
-    <div className="fixed top-0 right-0 h-full w-64 bg-gray-100 border-l border-gray-200 overflow-y-auto z-10">
+    <div className="fixed top-[60px] right-0 h-[calc(100vh-60px)] w-64 bg-gray-100 border-l border-gray-200 overflow-y-auto z-10">
       <div className="p-4">
         <h2 className="text-xl font-bold text-gray-800 mb-4">Daily Health Updates</h2>
         <div className="space-y-4">

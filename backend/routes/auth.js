@@ -15,8 +15,17 @@ const JWT_SECRET = process.env.JWT_SECRET || "supersecretkey";
 router.post("/signup", async (req, res) => {
     const { username, password } = req.body;
 
+    // Validation
     if (!username || !password) {
         return res.status(400).json({ message: "All fields are required" });
+    }
+
+    if (username.length < 3) {
+        return res.status(400).json({ message: "Username must be at least 3 characters long" });
+    }
+
+    if (password.length < 6) {
+        return res.status(400).json({ message: "Password must be at least 6 characters long" });
     }
 
     try {
@@ -49,8 +58,12 @@ router.post("/signup", async (req, res) => {
 // @route   POST /auth/login
 // @desc    Authenticate user and return JWT
 router.post("/login", async (req, res) => {
-    console.log(req.body); // Debug: Log incoming request body
     const { username, password } = req.body;
+
+    // Validation
+    if (!username || !password) {
+        return res.status(400).json({ message: "All fields are required" });
+    }
 
     try {
         // Find user by username

@@ -69,12 +69,12 @@ const SideMenu = () => {
         />
       )}
 
-      {/* Side Menu */}
+      {/* Side Menu - fixed, own scroll only for menu list; header sticks */}
       <div className={`
-        fixed lg:static top-0 left-0 h-screen bg-white shadow-xl z-40
+        fixed lg:static top-[60px] lg:top-0 left-0 h-[calc(100vh-60px)] lg:h-screen bg-white shadow-xl z-40
         transform transition-transform duration-300 ease-in-out
         ${isOpen ? 'translate-x-0' : '-translate-x-full'}
-        lg:translate-x-0 w-64 flex flex-col overflow-y-auto
+        lg:translate-x-0 w-64 flex flex-col
       `}>
         {/* Header */}
         <div className="p-6 border-b border-gray-200 sticky top-0 bg-white z-10">
@@ -103,8 +103,8 @@ const SideMenu = () => {
           </div>
         </div>
 
-        {/* Main Navigation */}
-        <nav className="flex-1 py-4">
+        {/* Main Navigation - scrollable area */}
+        <nav className="flex-1 py-4 overflow-y-auto">
           <ul className="space-y-1 px-3">
             {menuItems.map((item) => {
               const IconComponent = item.icon;
