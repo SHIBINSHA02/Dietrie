@@ -13,12 +13,9 @@ function HeroSection() {
             Your Journey to a Healthier You Starts Here
           </h1>
           <h2 className="text-white text-sm sm:text-base lg:text-lg font-normal leading-relaxed">
-            NutriTrack is your all-in-one platform for personalized nutrition and diet management. Whether you're looking to improve your eating habits, manage your weight, or connect with a nutritionist, we've got you covered.
+            Dietrie is your all-in-one platform for personalized nutrition and diet management. Whether you're looking to improve your eating habits, manage your weight, or connect with a nutritionist, we've got you covered.
           </h2>
         </div>
-        <button className="mt-4 sm:mt-6 lg:mt-8 w-full sm:w-auto min-w-[120px] sm:min-w-[150px] lg:min-w-[180px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 sm:h-11 lg:h-12 px-4 sm:px-5 lg:px-6 bg-[#14b714] text-[#f8fcf8] text-sm sm:text-base lg:text-lg font-bold leading-normal tracking-wide">
-          <span className="truncate">Get Started</span>
-        </button>
       </div>
     </div>
   );

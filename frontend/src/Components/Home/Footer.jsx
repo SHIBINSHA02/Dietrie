@@ -12,7 +12,7 @@ function Footer() {
             <a className="text-[#4e974e] text-base font-normal leading-normal min-w-40" href="#">Privacy Policy</a>
             <a className="text-[#4e974e] text-base font-normal leading-normal min-w-40" href="#">Terms of Service</a>
           </div>
-          <p className="text-[#4e974e] text-base font-normal leading-normal">@2024 NutriTrack. All rights reserved.</p>
+          <p className="text-[#4e974e] text-base font-normal leading-normal">@2024 Dietrie. All rights reserved.</p>
         </footer>
       </div>
     </footer>
