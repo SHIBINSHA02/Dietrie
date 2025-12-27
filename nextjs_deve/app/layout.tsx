@@ -26,17 +26,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      > 
-      <div className="gap-10">
-        <SideMenu/>
+            <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <div className="min-h-screen grid lg:grid-cols-[15vw_1fr] grid-rows-[1fr_auto]">
+          
+          {/* Sidebar */}
+          <div className="hidden lg:block">
+            <SideMenu />
+          </div>
+
+          {/* Children */}
+          <div className="overflow-y-auto">
+            {children}
+          </div>
+
+          {/* Footer - Full Width Shared Bottom */}
+          <div className="lg:col-span-2">
+            <Footer />
+          </div>
         </div>
-        <div className="lg:ml-[15vw] h-screen overflow-y-scroll">
-          {children}
-        </div>
-        <Footer/>
       </body>
+
     </html>
   );
 }

@@ -72,9 +72,19 @@ const SideMenu: React.FC = () => {
       )}
 
       {/* Sidebar */}
-      <aside
-        className={`w-[15vw] shadow-2xl rounded-3xl absolute`}
-      >
+     <aside
+            className={`
+                bg-white shadow-2xl rounded-3xl
+                
+                    lg:sticky lg:top-0
+    w-full top-0 left-0
+                h-screen z-50
+                 sm:w-[55vw] md:w-[35vw] lg:w-[15vw]
+                transition-transform duration-300
+                ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
+            `}
+            >
+
         {/* Header */}
         <div className="p-6 border-b bg-white/80 sticky top-0 z-20">
           <div className="flex items-center gap-3">
