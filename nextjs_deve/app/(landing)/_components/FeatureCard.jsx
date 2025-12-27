@@ -7,20 +7,18 @@ function FeatureCard({ iconSvg, title, description, route }) {
   const router = useRouter();
 
   const handleClick = () => {
-    if (route) {
-      router.push(route);
-    }
+    if (route) router.push(route);
   };
 
   return (
     <button
       onClick={handleClick}
-      className="flex flex-1 gap-3 rounded-lg border border-[#d0e7d0] bg-[#f8fcf8] p-4 flex-col text-left hover:bg-[#e8f4e8] transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#4e974e] focus:ring-opacity-50"
+      className="h-full flex flex-col gap-3 rounded-lg border border-[#d0e7d0] bg-[#f8fcf8] p-4 text-left hover:bg-[#e8f4e8] transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#4e974e] focus:ring-opacity-50"
     >
       <div
         className="text-[#0e1b0e]"
         dangerouslySetInnerHTML={{ __html: iconSvg }}
-      ></div>
+      />
 
       <div className="flex flex-col gap-1">
         <h2 className="text-[#0e1b0e] text-base font-bold leading-tight">
@@ -30,6 +28,9 @@ function FeatureCard({ iconSvg, title, description, route }) {
           {description}
         </p>
       </div>
+
+      {/* pushes bottom spacing so card fills nicely */}
+      <div className="flex-1" />
     </button>
   );
 }

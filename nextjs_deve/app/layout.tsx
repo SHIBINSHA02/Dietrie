@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from './_components/Footer'
+import SideMenu from "./_components/SideMenu";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,8 +28,13 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      > 
+      <div className="gap-10">
+        <SideMenu/>
+        </div>
+        <div className="lg:ml-[15vw] h-screen overflow-y-scroll">
+          {children}
+        </div>
         <Footer/>
       </body>
     </html>
