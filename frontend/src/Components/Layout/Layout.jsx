@@ -1,3 +1,5 @@
+// frontend/src/Components/Layout/Layout.jsx
+// frontend/src/Components/Layout/layout.jsx
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import SideMenu from '../SideMenu/sidemenu';
