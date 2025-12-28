@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///home/jin-2xgen/Documents/DietGen/nextjs_deve/app/meals/page.tsx"],"sourcesContent":["// nextjs_deve/app/meals/page.tsx\n// nextjs_deve/app/_components/meals/page.tsx\n// nextjs_deve/app/_components/Meals/page.tsx\n// nextjs_deve/app/_components/mealsPlan/page.tsx\n\"use client\"\nimport React from 'react';\nexport default function mealsPlanPage(){\n    return (\n        <>\n        <h1>Meals Plan</h1>\n        </>\n    );\n}"],"names":[],"mappings":";;;;;AAAA,iCAAiC;AACjC,6CAA6C;AAC7C,6CAA6C;AAC7C,iDAAiD;AACjD;;AAEe,SAAS;IACpB,qBACI;kBACA,cAAA,6LAAC;sBAAG;;;;;;;AAGZ"}}]
-}

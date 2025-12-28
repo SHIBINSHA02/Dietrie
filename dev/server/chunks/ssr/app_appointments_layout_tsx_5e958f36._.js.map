@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///home/jin-2xgen/Documents/DietGen/nextjs_deve/app/appointments/layout.tsx"],"sourcesContent":["// nextjs_deve/app/appointments/layout.tsx\n\nimport React from \"react\";\n\nexport default function AppointmentsLayout({\n  children,\n}: {\n  children: React.ReactNode;\n}) {\n  return <>{children}</>;\n}\n"],"names":[],"mappings":"AAAA,0CAA0C;;;;;;;AAI3B,SAAS,mBAAmB,EACzC,QAAQ,EAGT;IACC,qBAAO;kBAAG;;AACZ"}}]
-}

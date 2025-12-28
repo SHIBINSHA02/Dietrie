@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///home/jin-2xgen/Documents/DietGen/nextjs_deve/app/%28landing%29/layout.tsx"],"sourcesContent":["// nextjs_deve/app/(landing)/layout.tsx\n\n\n\nexport default function LandingLayout({ children }) {\n  return (\n    <section>\n      {children}\n    </section>\n  );\n}\n"],"names":[],"mappings":"AAAA,uCAAuC;;;;;;;AAIxB,SAAS,cAAc,EAAE,QAAQ,EAAE;IAChD,qBACE,8OAAC;kBACE;;;;;;AAGP"}}]
-}
