@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///home/jin-2xgen/Documents/DietGen/nextjs_deve/app/dashboard/page.tsx"],"sourcesContent":["// nextjs_deve/app/dashboard/page.tsx\n\"use client\";\n\nimport React from \"react\";\n\nexport default function DashboardPage() {\n  return (\n    <div>\n      <h1>Meals Dashboard</h1>\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;;AAAA,qCAAqC;AACrC;;AAIe,SAAS;IACtB,qBACE,6LAAC;kBACC,cAAA,6LAAC;sBAAG;;;;;;;;;;;AAGV;KANwB"}}]
+}

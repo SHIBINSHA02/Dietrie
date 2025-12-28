@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///home/jin-2xgen/Documents/DietGen/nextjs_deve/app/%28landing%29/layout.tsx"],"sourcesContent":["// nextjs_deve/app/(landing)/layout.tsx\nexport default function LandingLayout({ children }) {\n  return (\n    <section>\n      {children}\n    </section>\n  );\n}\n"],"names":[],"mappings":"AAAA,uCAAuC;;;;;;;AACxB,SAAS,cAAc,EAAE,QAAQ,EAAE;IAChD,qBACE,8OAAC;kBACE;;;;;;AAGP"}},
+    {"offset": {"line": 24, "column": 0}, "map": {"version":3,"sources":["file:///home/jin-2xgen/Documents/DietGen/nextjs_deve/node_modules/next/src/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = (\n  require('../../module.compiled') as typeof import('../../module.compiled')\n).vendored['react-rsc']!.ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":"AAAAA,OAAOC,OAAO,GACZC,QAAQ,4HACRC,QAAQ,CAAC,YAAY,CAAEC,kBAAkB","ignoreList":[0]}}]
+}

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///home/jin-2xgen/Documents/DietGen/nextjs_deve/app/track/page.tsx"],"sourcesContent":["// nextjs_deve/app/track/page.tsx\n\"use client\"\nimport React from 'react';\nexport default function TrackPage(){\n    return (\n        <>\n        <h1>Track Meals Plan</h1>\n        </>\n    );\n}"],"names":[],"mappings":";;;;;AAAA,iCAAiC;AACjC;;AAEe,SAAS;IACpB,qBACI;kBACA,cAAA,6LAAC;sBAAG;;;;;;;AAGZ;KANwB"}}]
+}

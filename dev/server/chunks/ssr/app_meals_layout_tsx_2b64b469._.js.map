@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///home/jin-2xgen/Documents/DietGen/nextjs_deve/app/meals/layout.tsx"],"sourcesContent":["// nextjs_deve/app/meals/layout.tsx\n// nextjs_deve/app/_components/mealsPlan/layout.tsx\nimport React from 'react';\nexport default function MealsLayout({children}:{children:React.ReactNode}){\n    return <>\n    {children}\n    </>\n}"],"names":[],"mappings":"AAAA,mCAAmC;AACnC,mDAAmD;;;;;;;AAEpC,SAAS,YAAY,EAAC,QAAQ,EAA4B;IACrE,qBAAO;kBACN;;AAEL"}}]
+}

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///home/jin-2xgen/Documents/DietGen/nextjs_deve/app/page.tsx"],"sourcesContent":["// nextjs_deve/app/page.tsx\nimport Image from \"next/image\";\n\nexport default function Home() {\n  return (\n    <div className=\"\">\n      <main className=\"\">\n        \n      </main>\n    </div>\n  );\n}\n"],"names":[],"mappings":"AAAA,2BAA2B;;;;;;;AAGZ,SAAS;IACtB,qBACE,8OAAC;QAAI,WAAU;kBACb,cAAA,8OAAC;YAAK,WAAU;;;;;;;;;;;AAKtB"}}]
+}
