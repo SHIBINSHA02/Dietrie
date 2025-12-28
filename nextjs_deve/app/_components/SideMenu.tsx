@@ -74,19 +74,19 @@ const SideMenu: React.FC = () => {
       {/* Sidebar */}
      <aside
             className={`
-                bg-white shadow-2xl rounded-3xl
+                bg-white shadow-2xl 
                 
                     lg:sticky lg:top-0
     w-full top-0 left-0
                 h-screen z-50
                  sm:w-[55vw] md:w-[35vw] lg:w-[15vw]
-                transition-transform duration-300
+                transition-transform duration-300 mb-7 rounded-b-2xl 
                 ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
             `}
             >
 
         {/* Header */}
-        <div className="p-6 border-b bg-white/80 sticky top-0 z-20">
+        <div className="p-6 border-b-green-200 border-b bg-white/80 sticky top-0 z-20">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-md">
               <Apple className="text-white" size={26} />
@@ -99,13 +99,13 @@ const SideMenu: React.FC = () => {
         </div>
 
         {/* Profile */}
-        <div className="p-4 border-b bg-white sticky top-[84px] z-10">
+        <div className="p-4 border-b border-green-200 rounded-4xl bg-white sticky top-[84px] z-10">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center">
               <User className="text-gray-600" />
             </div>
             <div className="flex-1">
-              <p className="font-semibold text-gray-800">John Doe</p>
+              <p className=" text-gray-600">S SHIBINSHA</p>
               <p className="text-sm text-green-600 font-medium">Premium Member</p>
             </div>
             <ChevronRight className="text-gray-400" size={18} />
@@ -125,7 +125,7 @@ const SideMenu: React.FC = () => {
                 onClick={() => window.innerWidth < 1024 && setIsOpen(false)}
                 className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 text-[15px]
                   ${active
-                    ? "bg-green-600 text-white shadow-lg shadow-green-200"
+                    ? "bg-green-100  shadow-lg shadow-green-200 border border-green-200"
                     : "text-gray-700 hover:bg-gray-100 hover:text-green-700"}`}
               >
                 <Icon size={20} />
@@ -142,7 +142,7 @@ const SideMenu: React.FC = () => {
         </nav>
 
         {/* Bottom Menu */}
-        <div className="border-t p-3 space-y-1">
+        <div className="border-t-green-200 border-t p-3 space-y-1">
           {bottomMenuItems.map((item) => {
             const active = pathname === item.to;
             const Icon = item.icon;
