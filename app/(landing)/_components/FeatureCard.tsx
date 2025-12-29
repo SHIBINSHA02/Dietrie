@@ -3,7 +3,15 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 
-function FeatureCard({ iconSvg, title, description, route }) {
+// Define the shape of your props
+interface FeatureCardProps {
+  iconSvg: string;
+  title: string;
+  description: string;
+  route?: string; // Optional prop
+}
+
+function FeatureCard({ iconSvg, title, description, route }: FeatureCardProps) {
   const router = useRouter();
 
   const handleClick = () => {
@@ -17,6 +25,7 @@ function FeatureCard({ iconSvg, title, description, route }) {
     >
       <div
         className="text-[#0e1b0e]"
+        // Ensure the SVG strings are coming from a trusted source
         dangerouslySetInnerHTML={{ __html: iconSvg }}
       />
 
@@ -29,7 +38,6 @@ function FeatureCard({ iconSvg, title, description, route }) {
         </p>
       </div>
 
-      {/* pushes bottom spacing so card fills nicely */}
       <div className="flex-1" />
     </button>
   );

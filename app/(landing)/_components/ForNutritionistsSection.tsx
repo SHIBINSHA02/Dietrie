@@ -1,3 +1,4 @@
+// app/(landing)/_components/ForNutritionistsSection.tsx
 // nextjs_deve/app/(landing)/_components/ForNutritionistsSection.jsx
 import React from "react";
 import FeatureCard from "./FeatureCard";
