@@ -1,9 +1,8 @@
 // app/layout.tsx
 import React from "react";
 import './globals.css';
-import Footer from "./_components/Footer";
-import SideMenu from "./_components/SideMenu";
-
+import Footer from "@/app/_components/Footer";
+import SideMenu from "@/app/_components/SideMenu";
 export default function RootLayout({
   children,
 }: {
