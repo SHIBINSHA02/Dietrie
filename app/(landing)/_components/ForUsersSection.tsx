@@ -39,7 +39,7 @@ function ForUsersSection() {
         </h1>
         <p className="text-[#0e1b0e] text-base font-normal leading-normal max-w-[720px]">Take control of your health with our user-friendly tools and resources.</p>
       </div>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-0">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(208px,1fr))] gap-3 p-0">
         {userFeatures.map((feature, index) => (
           <FeatureCard 
             key={index} 

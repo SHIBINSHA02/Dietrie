@@ -1,3 +1,4 @@
+// app/(landing)/_components/Home.tsx
 // nextjs_deve/app/(landing)/_components/Home.jsx
 // nextjs_deve/app/(landing)/_components/_components/Home.jsx
 // frontend/src/Components/Home/Home.jsx

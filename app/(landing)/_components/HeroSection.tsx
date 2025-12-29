@@ -1,3 +1,4 @@
+// app/(landing)/_components/HeroSection.tsx
 import React from 'react';
 
 const HeroSection: React.FC = () => {
