@@ -58,7 +58,7 @@ const SideMenu: React.FC = () => {
       {/* Mobile Toggle */}
       <button
         onClick={toggleMenu}
-        className="lg:hidden fixed top-4 left-4 z-[60] p-3 bg-green-600 text-white rounded-2xl shadow-xl hover:bg-green-700 active:scale-95 transition"
+        className="lg:hidden sticky top-4 left-4 z-[60] p-3 bg-green-600 text-white rounded-2xl shadow-xl hover:bg-green-700 active:scale-95 transition"
       >
         {isOpen ? <X size={26} /> : <Menu size={26} />}
       </button>
